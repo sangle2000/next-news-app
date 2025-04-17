@@ -1,9 +1,9 @@
-import {DUMMY_NEWS} from "@/utils/dummy-news";
+import {getNewsItem} from "@/lib/news";
 
-export default async function NewsImagePage({ params }: { params: { slug: string } }) {
+export default async function NewsImagePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
 
-    const newsItem = DUMMY_NEWS.find(news => news.slug === slug)
+    const newsItem = await getNewsItem(slug)
 
     return (
         <>

@@ -6,3 +6,11 @@ export type newsType = {
     date: string,
     content: string
 }
+
+export type yearType = {
+    year: string
+}
+
+export type monthType = {
+    month: string
+}
